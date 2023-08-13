@@ -1,49 +1,39 @@
 # FullStackAcademy
 
-Welcome to FullStackAcademy! This repository is your go-to resource for diving deep into web3, frontend, backend, and AI. Each section not only provides comprehensive Nextra-powered documentation but also hands-on labs to reinforce learning.
+Welcome to FullStackAcademy, a comprehensive guide covering multiple facets of modern software development. This repository serves as a foundation for learning and mastering web3, frontend, backend, and AI technologies.
 
-## Table of Contents
+## Structure and Live Docs
 
-- [FullStackAcademy](#fullstackacademy)
-  - [Table of Contents](#table-of-contents)
-  - [ Web3 (Blockchain)](#-web3-blockchain)
-  - [ Frontend Development](#-frontend-development)
-  - [ Backend Development](#-backend-development)
-  - [ Artificial Intelligence (AI)](#-artificial-intelligence-ai)
-  - [ Contributing](#-contributing)
-  - [ Feedback](#-feedback)
-  - [License](#license)
+- 📂 **web3/docs**: 
+  - **Documentation**: [web3.burneeble.com](https://web3.burneeble.com) - Focusing on the world of decentralized applications, blockchain technologies, and smart contracts.
+  - **Labs**: Hands-on coding labs for practical experience with web3 development.
 
-## <a name="web3"></a> Web3 (Blockchain)
-- 📖 **docs**: Nextra-based documentation delving into decentralized applications, smart contracts, and blockchain technologies.
-- 🧪 **labs**: Hands-on coding exercises, allowing you to apply web3 knowledge in practical scenarios.
+- 📂 **frontend/docs**: 
+  - **Documentation**: [frontend.burneeble.com](https://frontend.burneeble.com) - Dive deep into frontend development. From basics to advanced topics, master everything about frontend technologies.
+  - **Labs**: Code along and build impressive frontend projects, enhancing your hands-on skills.
 
-## <a name="frontend"></a> Frontend Development
-- 📖 **docs**: In-depth Nextra documentation, exploring the world of frontend development, from the basics to advanced topics.
-- 🧪 **labs**: Code and collaborate on frontend-centric projects to solidify your understanding.
+- 📂 **backend/docs**: 
+  - **Documentation**: [backend.burneeble.com](https://backend.burneeble.com) - Backend technologies unraveled. Learn the intricacies of server-side programming, databases, and more.
+  - **Labs**: Explore the world of backend development with practical coding exercises.
 
-## <a name="backend"></a> Backend Development
-- 📖 **docs**: Backend technologies dissected through Nextra's lens. From server mechanics to databases, get acquainted with everything.
-- 🧪 **labs**: Engage in meaningful backend development projects, taking your skills up a notch.
+- 📂 **ai/docs**: 
+  - **Documentation**: [ai.burneeble.com](#) *(link will be added once set up)* - Understand the realm of Artificial Intelligence. Discover the world of neural networks, machine learning, and more.
+  - **Labs**: Implement your AI knowledge with hands-on labs, building meaningful projects.
 
-## <a name="ai"></a> Artificial Intelligence (AI)
-- 📖 **docs**: A Nextra-fueled journey into the fascinating domain of AI. Understand neural networks, machine learning, and beyond.
-- 🧪 **labs**: Immerse yourself in AI with projects that bring theoretical knowledge to life.
+## Getting Started
 
-## <a name="contributing"></a> Contributing
+1. **Navigating through Nextra Documentation**: Click on the links above to navigate directly to the live Nextra-powered documentation. To view the documentation locally, navigate to the desired `docs` folder, install the necessary dependencies using  `yarn install`, and then run `yarn dev`.
+   
+2. **Labs**: Each `labs` directory houses practical coding projects related to its parent category. These labs offer a hands-on approach to the theoretical concepts presented in the documentation.
 
-We encourage contributions to enhance FullStackAcademy. Whether you're updating documentation, expanding the labs, or offering general improvements, your efforts are appreciated. To contribute:
+3. **Contributions**: Contributions are highly welcomed! Whether it's enhancing the documentation, adding to the labs, or any other improvement, feel free to make a pull request.
 
-1. Fork this repository.
-2. Make your changes.
-3. Submit a pull request.
+4. **Feedback**: We appreciate feedback! If you have any suggestions or find any errors, please open an issue.
 
-## <a name="feedback"></a> Feedback
+## Further Information
 
-Your feedback drives the continuous improvement of FullStackAcademy. If you have any suggestions, find errors, or just want to say hi, please open an issue.
+- **License**: All content in this repository is shared under the MIT license.
 
-## License
-
-All content in this repository is shared under the MIT license. See `LICENSE` for more details.
+- **Contributors**: A special thanks to all contributors who have helped enhance this academy, making it a valuable resource for all.
 
 Happy Learning!
