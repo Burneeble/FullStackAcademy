@@ -1,0 +1,15 @@
+{
+  "index": "Introduction",
+  "Backend-languages": "🏭 Backend languages",
+  "Packagers-Managers": "Packagers Managers",
+  "Databases": "Databases",
+  "Hosting-environments": "Hosting environments",
+  "Testing-debugging-code": "Testing & debugging code 🔴",
+  "Security": "Security 🔴",
+  "Caching-Optimization": "Caching & Optimization 🔴",
+  "APIs": "APIs 🔴",
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}
