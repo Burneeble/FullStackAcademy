@@ -1,0 +1,21 @@
+{
+  "index": "📈 Welcome to Web3 Docs 🟢",
+  "web3": "💻 Web3: Overview 💎",
+  "wallet": "💳 Wallet 🔴",
+  "start": "▶️ Start From Here 🟠",
+  "decentralized-storage": "📼 Decentralized Storage",
+  "solidity": "📝 Solidity 🔴",
+  "nft": "🦧 NFT 🔴",
+  "token": "💸 TOKEN 🔴",
+  "extra": "👽 Extra 🟠",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/shuding_",
+    "newWindow": true
+  }
+}

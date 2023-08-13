@@ -1,0 +1,75 @@
+# 🌐 IPFS: The Interplanetary File System 🚀
+
+<iframe
+  width="800"
+  height="480"
+  src="https://www.youtube.com/embed/5Uj6uR3fp-U"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+The Internet has become an essential tool in our daily lives. We use it for media consumption, communication, learning, managing our finances, and more. However, the web as we know it has a problem: data centralization. Everything is stored on large servers, usually controlled by a single company.
+
+> **Technical Insight 💡:** The current web model is based on "location-based addressing". This means that when you want to download a file, you tell your computer where to find it. If the server is offline, you won't get the file, even if someone else has downloaded it before and still has a copy.
+
+This centralization leads to another issue: censorship. Since data is available on only a few servers, it's easy for a government to block access. For instance, in 2017, Turkey ordered ISPs to block access to Wikipedia, considering it a "threat to national security".
+
+But why do we continue to use this model? It's because we have high expectations for the web. We want instant, high-quality pages, images, and videos. Centralized servers allow companies to control the speed of content delivery. Another reason is that there isn't a fast alternative. But that could change!
+
+Meet **IPFS**, the Interplanetary File System. It aims to make the web completely distributed using P2P networks, similar to BitTorrent.
+
+> **Curiosity 🧐:** IPFS is named "Interplanetary File System" because it could potentially work between different planets. For instance, if we had a base on Mars, IPFS could be used to distribute parts of the internet there, reducing the time it takes to load a webpage from Earth.
+
+**IPFS** was developed by Juan Benet in 2014 and has since gained popularity as an essential component of the Web3 and blockchain ecosystem.
+
+### Web3 and Blockchain Synergy
+
+In the context of blockchain and Web3, **IPFS** plays a vital role in providing a decentralized storage solution for various applications. It can be used to store data off-chain, such as metadata or assets related to Non-Fungible Tokens (NFTs) in blockchain networks like Ethereum.
+
+**IPFS** switches from "location-based addressing" to "content-based addressing". Instead of telling your computer where to find a resource, you just tell it what you want. Each file has a unique hash, like a fingerprint. When you want to download a file, you ask the network: "Who has the file with this hash?" and someone on the IPFS network will provide it.
+
+**IPFS** also takes into account different versions of your files. When you update a file, IPFS creates a new "commit object" for you. This object tells IPFS which commit came before and links it to your file's IPFS object. This process can be repeated endlessly, ensuring that your file and its entire history are accessible to other network nodes.
+
+### The Power of Pinning Nodes
+
+**Pinning nodes** are an integral part of the IPFS network. When content is added to IPFS, it is assigned a content identifier (CID). By default, IPFS uses a data retention model called "garbage collection," which means that content not actively being requested might be removed from the network to free up space. However, pinning nodes allow users or applications to "pin" specific content, indicating that it should be kept available on the network regardless of demand. Pinning ensures that important or frequently accessed data remains accessible, acting as a form of content hosting or preservation.
+
+### Navigating via IPFS Gateways
+
+**IPFS gateways** are servers that act as intermediaries between regular web browsers and the IPFS network. Since IPFS content is typically accessed through a unique CID and requires IPFS software to retrieve, gateways facilitate the process for users who don't have IPFS software installed. When a user accesses IPFS content through a gateway, the gateway fetches the requested content from the IPFS network and serves it over regular HTTP, making it accessible like any other web content.
+
+### Efficient Data Distribution
+
+IPFS uses a **Distributed Hash Table** (DHT) to efficiently locate content on the network. When a user requests specific content identified by its CID, the request is routed through the DHT, which helps determine the locations of nodes that have the content. The network then retrieves the content from these nodes and delivers it to the requesting user. This distributed nature of content retrieval allows for efficient and decentralized data distribution, which can lead to improved download speeds and reliability.
+
+It's important to note that **IPFS** is a peer-to-peer network, meaning that many nodes participate in storing and distributing content. Each node can act as both a content provider and consumer, creating a robust and resilient network for hosting and accessing data in a decentralized manner.
+
+---
+
+However, **IPFS** has its limitations. The biggest problem is keeping files available. Each network node caches the files it has downloaded and makes them available to others. But if a specific file is kept by a few nodes and they go offline, the file becomes unavailable.
+
+**Filecoin**, created by the same people behind **IPFS**, is trying to solve this problem. It's a blockchain built on IPFS aiming to create a decentralized storage market. If you have free space, you can rent it to others and earn money. Filecoin encourages nodes to keep files online as long as possible, as they won't get a reward otherwise.
+
+### Security considerations
+
+**IPFS**, like any technology, comes with its own set of security considerations. Here are some things to keep in mind when using **IPFS**:
+
+1. **Data Privacy:** IPFS is a public network, and content stored on IPFS is accessible to anyone who has the content's CID. For private or sensitive data, additional encryption layers should be employed before adding content to IPFS.
+
+2. **Censorship Resistance:** IPFS's decentralized nature and content addressing make it difficult to censor specific content. However, content moderation mechanisms can be implemented at the application level to prevent the spread of malicious or harmful content.
+
+3. **Protection Against Attacks:** IPFS is susceptible to certain attacks, such as a Sybil attack, where an attacker creates multiple nodes to control a significant portion of the network. Reputation systems and cryptographic mechanisms can help mitigate these risks.
+
+### A Step Towards Decentralization
+
+IPFS stands as a remarkable endeavor with the potential to lead us towards a truly decentralized internet, transcending the limitations of the existing model.
+
+<details>
+
+<summary>**External Resources**</summary>
+
+1. [IPFS Official Website](https://ipfs.io/)
+2. [IPFS Documentation](https://docs.ipfs.io/)
+
+</details>

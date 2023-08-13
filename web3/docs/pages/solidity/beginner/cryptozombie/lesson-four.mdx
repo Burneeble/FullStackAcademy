@@ -1,0 +1,71 @@
+import { Callout } from "nextra/components";
+
+## 4. Zombie Battle System
+
+### Introduction: [CryptoZombies LESSON 4](https://cryptozombies.io/en/lesson/4/chapter/1)
+
+In lesson 4 you're gonna make your DApp able to collect, withdraw and transfer Ether.
+
+## Summary
+
+During lesson 4 the main topics you will face are the following:
+
+### 1. The Payable Modifier:
+
+Payable functions are a special feature of Ethereum that enables contracts to receive Ether, the cryptocurrency used on the Ethereum network.
+
+To define a payable function, use the `payable` modifier in the function declaration.
+
+Here's a simple example:
+
+```solidity copy /payable/ {3}
+contract OnlineStore {
+  function buySomething() external payable {
+    require(msg.value == 0.001 ether); // Check if 0.001 ether was sent
+  }
+}
+```
+
+Inside the function, you can access the amount of Ether sent to the contract using `msg.value`.
+
+### 2. Withdraws
+
+After you send Ether to a contract, it gets stored in the contract's Ethereum account, and it will be stay there — unless you add a function to withdraw the Ether from the contract.
+
+You can write a function to withdraw Ether from the contract as follows:
+
+```solidity copy
+contract GetPaid is Ownable {
+  function withdraw() external onlyOwner {
+    address payable _owner = address(uint160(owner()));
+    _owner.transfer(address(this).balance);
+  }
+}
+```
+
+<Callout type="info" emoji="ℹ️">
+  Note that we're using `owner()` and `onlyOwner` from the `Ownable` contract,
+  assuming that was imported.
+</Callout>
+
+- The `withdraw` function is specified as `external`, meaning it can be called from outside the contract.
+- The `onlyOwner` modifier from the `Ownable` contract restricts access to the `withdraw` function, ensuring only the contract owner can initiate withdrawals.
+- To use the `transfer` function, the target address must be of type `address payable`. In this example, we cast the owner's address to `address payable` using `address(uint160(owner()))`.
+- `address(this).balance` returns the total balance stored in the contract, which includes all the Ether sent by users to the contract.
+
+### 3. Random Numbers
+
+Generating random numbers securely in Solidity is challenging. While the `keccak256` hash function can be used for random number generation, it is vulnerable to attacks by dishonest nodes in the Ethereum network.
+
+To generate a random number using `keccak256`, you can combine the current timestamp (`now`), the sender's address (`msg.sender`), and an incrementing nonce (`randNonce`). However, dishonest nodes can manipulate the random number generation process to their advantage.
+
+```solidity copy
+uint randNonce = 0;
+uint random = uint(keccak256(abi.encodePacked(now, msg.sender, randNonce))) % 100;
+randNonce++;
+uint random2 = uint(keccak256(abi.encodePacked(now, msg.sender, randNonce))) % 100;
+```
+
+The problem lies in the nature of Ethereum's transaction system, where nodes compete to solve a Proof of Work to publish transactions as blocks. Dishonest nodes can withhold certain transactions until they win the random number generation and solve the next block, potentially leading to unfair outcomes, especially in games involving real money.
+
+To achieve secure random number generation, using an oracle to access an external random number function is recommended. Oracles allow data to be pulled into the Ethereum blockchain from external sources, ensuring a more reliable and secure random number generation process.

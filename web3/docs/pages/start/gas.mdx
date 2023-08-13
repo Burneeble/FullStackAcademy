@@ -1,0 +1,39 @@
+# Gas
+
+**Gas** is a crucial element of the Ethereum blockchain network. Its primary role is to serve as a measure of computational work within the network, effectively acting as the "fuel" for Ethereum. It's always paid in ether, the native cryptocurrency of the Ethereum network. Every operation, from simple transfers of ether to complex smart contracts, requires a certain amount of gas to execute. The cost of gas is a transaction fee paid to miners for their work in validating and adding transactions into the Ethereum blockchain.
+
+For every transaction you initiate on the network, you need to specify the **gas limit** and the **gas price** you're willing to pay. These values influence how quickly your transaction will be processed by the network and the total fee you'll incur.
+
+Each bytecode operation in the Ethereum Virtual Machine (EVM) has a specific number of gas units assigned to it. When an operation is executed by EVM, the corresponding quantity of gas is deducted from the total gas limit provided in the transaction.
+
+import YouTubeVideo from '../../components/youtube/youtube.js';
+
+<YouTubeVideo videoId="gyMwXuJrbJQ" startTime={"3545"} endTime={"3884"} />
+
+## Etherscan Gas Tracker
+
+[Etherscan Gas Tracker](https://etherscan.io/gastracker) is a useful tool for those who are engaging in transactions on the Ethereum network. This online tool provides real-time data on the current gas prices within the Ethereum network.
+
+The gas tracker displays three main categories of gas prices—low, average, and high. These categories give an indication of how quickly a transaction with a given gas price might be expected to be included in a block and executed.
+
+- **Low gas price**: This is the lowest gas price at which some recent transactions have been included in the block. Using a low gas price may result in slower transaction times, especially during periods of high demand.
+
+- **Average gas price**: This represents the middle range of gas prices for recent transactions. It provides a balance between speed and cost.
+
+- **High gas price**: This is the higher range of gas prices for recent transactions. Transactions with a high gas price are likely to be processed faster as miners are incentivized to include them in the blockchain due to the higher rewards. However, this comes at a cost as it will be more expensive.
+
+The Etherscan Gas Tracker also provides a 'gas price oracle', which is a mechanism that suggests a suitable gas price for immediate processing based on the current conditions of the network. It also offers a historical gas price chart which shows how gas prices have changed over time.
+
+The data provided by Etherscan Gas Tracker can be used to make informed decisions about what gas price to set, depending on the urgency of the transaction and the willingness to pay.
+
+
+
+## Gas Limit
+
+The **gas limit** represents the maximum amount of gas you're willing to spend on a transaction. It sets an upper limit on the computational effort the network can expend on the transaction's behalf. If your transaction consumes less gas than the limit you've set, the remaining gas is refunded back to your wallet. However, if the operation exhausts all the gas without completing its execution—perhaps due to complex computational requirements or errors in a smart contract—the transaction fails, and the used gas isn't refunded. It's consumed as part of the transaction fees, rewarding miners for the computational resources they've committed.
+
+## Gas Price
+
+The **gas price**, on the other hand, is the amount of ether you're willing to pay for each unit of gas. It's typically measured in 'gwei', which is one billionth of an ether. This gas price is effectively a bid you're placing on the computational resources of the Ethereum network. 
+
+Miners, who have a say in choosing which transactions to validate and add to the blockchain, are incentivized to prioritize transactions offering higher gas prices. As such, if you set a high gas price, there's a higher probability that your transaction will be processed faster. Conversely, if you opt for a low gas price, you might have to wait longer—especially during periods of high network demand—until the blockchain has capacity to process transactions with lower fees.
