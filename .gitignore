@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 .DS_Store
 .next
 yarn.lock
 node_modules
-=======
-.DS_Store
->>>>>>> parent of 28dce44 (update web3)
