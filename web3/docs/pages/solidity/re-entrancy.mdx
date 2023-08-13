@@ -1,0 +1,31 @@
+# Re-Entrancy Attacks in Blockchain: A Deep Dive 🏦💰🔓
+
+Now going to delve into the world of re-entrancy attacks. Despite being well-known and somewhat old, re-entrancy attacks have been one of the most common attacks over the past few years. 
+
+## Notable Re-Entrancy Attacks 📰
+
+- In April 2020, $25 million was taken from Uniswap and Lendf using re-entrancy.
+- In May 2021, Burger Swap lost $7.2 million in tokens via a re-entrancy exploit.
+- In August 2021, Cream Finance lost $18.8 million due to similar exploits.
+- One of the most famous re-entrancy attacks is the DAO hack, which resulted in a loss of $60 million.
+
+> 💡 **Insight**: Re-entrancy can occur when a contract function makes an external call to an untrusted contract. The untrusted contract repeatedly calls the original function before it's finished executing, draining the funds.
+
+## A Simple Example 🎭
+
+Consider a contract under attack, called `Bank`, and an attacker contract called `Thief`. The `Bank` tracks how much each address has deposited using a mapping. It has a deposit function which increases the amount that each address has, and a withdraw function which requires the address in question to have more than a balance of zero. It then sends the money and sets the balance to zero.
+
+The `Thief` contract has one function called `attack` and a fallback function used when money is sent without a specific function being called. When the `Thief` calls `attack`, it deposits one Ether to the `Bank` to increase its balance to one, then calls `withdraw` immediately after.
+
+> 🟡 **Curiosity**: The re-entrancy starts when the `Bank` is sending the money. The fallback function of the `Thief` checks to see if the `Bank` still has some cash. If it does, it calls the withdrawal function again. The `Bank` then checks the `Thief's` balance and it's still greater than zero, so they send out the one Ether. This happens again and again until the funds are drained. The `Bank's` withdraw function doesn't hit the final line of code to update the balance to zero while it's being called recursively. The `Thief` contract just continually receives one Ether until the `Bank` is completely out of funds.
+
+## How to Prevent Re-Entrancy Attacks 🛡️
+
+A recommended way of writing functions is to first make all of your checks, then make the changes (update balances or change the state), and then finally make calls to other contracts. With that in mind, we can simply change the code of the `Bank` to update the balance first and then send the money. If the `Thief` tries to call again, their balance is already set to zero and the `Bank` doesn't get wrecked.
+
+Another technique is to use booleans to hypothetically lock functions until they're finished. We can set a state variable called `locked` and then write a modifier that turns it on and off. When a function using this modifier is called, the boolean is switched to true (i.e., locked), and only after all of the code in the function has been executed does the boolean switch to off (or false). This means if the fallback function from the `Thief` calls again recursively, it's going to fail.
+
+You can also use things like OpenZeppelin's pre-made reentrancy guards. You can download it, add that to your contract for extra safety, and it's always best to have an expert audit your work if you plan to handle lots of people's hard-earned cash.
+
+
+<iframe width="800" height="480" src="https://www.youtube.com/embed/76So4jCysAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
