@@ -1,0 +1,45 @@
+# Software Testing
+
+# Introduction
+
+Software testing is a crucial aspect of testing for our applications. It ensures stability and resilience by validating the performance of individual modules. The most important advantage of unit testing is **automation**, we can write hundreds of test each run in a matter of milliseconds whenever we need, for example, when we made a major or even a minor change in the code.
+
+The framework we use for testing our applications is Jest.
+
+# Tutorial
+
+## Writing Tests with Jest
+
+To write tests with Jest, we need to create a file with a **.test.js** or **.spec.js** extension. Then, we can write our individual test cases using the **test()** function provided by Jest. We can use various matchers to check whether the expected output of the function is what we actually receive.
+
+For example, if we have a function named **add()** that takes in two numbers and returns their sum, we can write a test case like this:
+
+```jsx
+test("adds 1 + 2 to equal 3", () => {
+  expect(add(1, 2)).toBe(3);
+});
+```
+
+This test case will pass if the **add()** function correctly adds 1 and 2 to return 3. We can run all of our tests using the command **npm test** or **yarn test** in the terminal.
+
+There are many test naming conventions:
+
+[Naming Your Unit Tests: It Should vs. Given/When/Then](https://markus.oberlehner.net/blog/naming-your-unit-tests-it-should-vs-given-when-then/)
+
+If we are writing test about classes or functions in complex environments we have to describe the context
+
+## Mocking with Jest
+
+Sometimes, our functions may rely on external APIs or other functions that are not within our control. In these cases, we can use Jest's mocking feature to simulate the behavior of these external dependencies. For example, if we have a function named **getWeather()** that relies on an external API to get the current weather, we can write a mock function like this:
+
+```jsx
+jest.mock("./weatherAPI", () => {
+  return {
+    getWeather: jest.fn(() => Promise.resolve({ temperature: 25 })),
+  };
+});
+```
+
+This mock function will replace the **getWeather()** function in our application with a Jest mock function that returns a temperature of 25 degrees Celsius. This allows us to test our function even if the external API is down or unreliable.
+
+## Advanced Mocking
