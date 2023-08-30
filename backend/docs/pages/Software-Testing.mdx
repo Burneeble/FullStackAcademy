@@ -59,6 +59,43 @@ describe("Calculator class", () => {
 });
 ```
 
+Let’s say that we want to set the angle unit of measure to degrees and that we want our Calculator to clear its state after each test. We can do that with `beforeAll` and `beforeEach` (for the sake of simplicity, we’ll assume that `Calculator` is a **Singleton Class**, [https://refactoring.guru/design-patterns/singleton/typescript/example](https://refactoring.guru/design-patterns/singleton/typescript/example))
+
+```tsx
+import { Calculator } from "./Calculator";
+
+describe("Calculator class", () => {
+  beforeAll(async () => {
+    Calculator.instance.setAngleMeasurement("Degrees");
+  });
+
+  beforeEach(async () => {
+    Calculator.instance.clearState();
+  });
+
+  describe("sum method", () => {
+    it("Should sum two positive numbers", () => {
+      let result = Calculator.instance.sum(2, 3);
+      expect(result).toBe(5);
+    });
+    it("Should sum two negative numbers", () => {
+      let result = calc.sum(-2, -3);
+      expect(result).toBe(-5);
+    });
+  });
+  describe("sub method", () => {
+    it("Should subtract two positive numbers", () => {
+      let result = Calculator.instance.sub(3, 2);
+      expect(result).toBe(1);
+    });
+    it("Should subtract two negative numbers", () => {
+      let result = Calculator.instance.sub(-3, -2);
+      expect(result).toBe(-1);
+    });
+  });
+});
+```
+
 ## Setup Jest
 
 Setup Jest in our project is really easy. All we have to do is to install `jest` as a **devDependency** and write some configurations to better suit our needs.
