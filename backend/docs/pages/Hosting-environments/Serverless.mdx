@@ -16,7 +16,7 @@ Lambda functions are triggered by events. These events can come from various AWS
 
 AWS Lambda automatically scales your functions in response to incoming traffic. You don't need to configure the number of servers; AWS handles it for you.
 
-# Project Setup
+# **Project Setup**
 
 In this tutorial we’re going to setup and deploy a serverless application.
 
@@ -104,7 +104,7 @@ module.exports.helloWorld = (event, context, callback) => {
 
 Let’s create a new folder called `functions` and move `handlers.js` into it like this:
 
-![Untitled](./images/Serverless_1.png)
+![Untitled](../images/Serverless_1.png)
 
 ### **Step 3 - Create AWS credentials**
 
@@ -114,7 +114,7 @@ Once you have done that you will need to allow your AWS user permissions to depl
 
 - In the AWS console go to the IAM service -> Users -> *IAM Manage User Access and Encryption Keys*
 
-![Untitled](./images/Serverless_2.png)
+![Untitled](../images/Serverless_2.png)
 
 - Choose your existing user or create a new user.
 
@@ -129,13 +129,13 @@ Ensure the user has the following permissions:
 - `AmazonCognitoDeveloperAuthenticatedIdentities`
 - `IAMFullAccess`
 
-![Untitled](./images/Serverless_3.png)
+![Untitled](../images/Serverless_3.png)
 
-![Untitled](./images/Serverless_4.png)
+![Untitled](../images/Serverless_4.png)
 
-![Untitled](./images/Serverless_5.png)
+![Untitled](../images/Serverless_5.png)
 
-![Untitled](./images/Serverless_6.png)
+![Untitled](../images/Serverless_6.png)
 
 ### **Step 4 - Configure serverless with your AWS credentials**
 
@@ -145,7 +145,7 @@ Now you can use Serverless Framework to save the credentials in a way that the a
 serverless config credentials --provider aws --key YOUR_ACCESS_KEY --secret YOUR_ACCESS_SECRET
 ```
 
-### Step 4.5 - Test
+### **Step 4.5 - Test your lambda function offline**
 
 Before deploying our lambda function it would be wise to test it offline. We can make use of a handy plugin named `serverless-offline` that boots our lambda functions offline.
 
