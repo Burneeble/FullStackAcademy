@@ -9,7 +9,7 @@ First you'll have to create a `Car` class that contains JSON attributes only (se
 
 Then, create a `Utilities` class inside a file that create parameters to interact with DynamoDB .
 
-After that, create a `Manager` class inside another file that use the parameters to factually interact with DynamoDB (take `app-backend` as an example and read the [docs](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/dynamodb-examples.htmlhttps:/)).
+After that, create a `Manager` class inside another file that use the parameters to factually interact with DynamoDB (take `app-backend` as an example and read the [docs](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/dynamodb-examples.html)).
 
 Finally, create the lambda functions, you should be able to:
 
