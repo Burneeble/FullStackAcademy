@@ -145,6 +145,59 @@ Now you can use Serverless Framework to save the credentials in a way that the a
 serverless config credentials --provider aws --key YOUR_ACCESS_KEY --secret YOUR_ACCESS_SECRET
 ```
 
+### Step 4.5 - Test
+
+Before deploying our lambda function it would be wise to test it offline. We can make use of a handy plugin named `serverless-offline` that boots our lambda functions offline.
+
+To install it we have to run the following command:
+
+```bash
+yarn install -D serverless-offline
+```
+
+we’ll have to add the configs into the `serverless.yml` file like this:
+
+```yaml
+# serverless.yml
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+# Serverless.yml is the configuration the CLI
+# uses to deploy your code to your provider of choice
+
+# The `service` block is the name of the service
+service: serverless-hello-world
+
+plugins:
+  - serverless-offline
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+
+# The `functions` block defines what code to deploy
+functions:
+  helloWorld:
+    handler: handler.helloWorld
+    # The `events` block defines how to trigger the handler.helloWorld code
+    events:
+      - http:
+          path: hello-world
+          method: get
+          cors:true
+```
+
+To finally boot the lambda run the following command:
+
+```bash
+serverless offline
+```
+
 ### **Step 5 - Deploy your lambda function**
 
 Deploy your Lambda function to AWS using the following command. (the `--verbose` flag will output full logs of your deployment)
