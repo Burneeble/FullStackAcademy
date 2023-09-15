@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "allowJs": true,
+    "target": "es5",
+    "moduleResolution": "node",
+    "lib": [
+      "es2015"
+    ],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

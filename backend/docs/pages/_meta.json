@@ -5,8 +5,8 @@
   "Databases": "Databases",
   "Hosting-environments": "Hosting Environments",
   "Software-Testing": "Software Testing",
+  "CI-CD": "Continuous Integration & Continuous Delivery",
   "Security": "Security 🔴",
-  "Caching-Optimization": "Caching & Optimization 🔴",
   "APIs": "APIs 🔴",
   "about": {
     "title": "About",
