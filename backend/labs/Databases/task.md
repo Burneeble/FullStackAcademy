@@ -18,3 +18,5 @@ Finally, create the lambda functions, you should be able to:
 - Update a car record information;
 - Delete a car;
 - Read all cars.
+
+Once you're done, deploy your lambda functions with the command `yarn deploy` (this command automatically uses webpack to build the service).

@@ -7,7 +7,15 @@
 # The `service` block is the name of the service
 service: databases
 
-frameworkVersion: "3"
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: "webpack.config.js"
+    packager: "yarn"
+    excludeFiles: src/**/*.test.js
+    keepOutputDirectory: true
 
 # The `provider` block defines where your service will be deployed
 provider:
